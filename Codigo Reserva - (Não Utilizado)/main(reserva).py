@@ -1,0 +1,144 @@
+class Usuario:
+
+    def __init__(self, nome, email, senha, telefone, nasc, cidade, estado):
+        self.nome = nome
+        self.email = email
+        self.senha = senha
+        self.telefone = telefone
+        self.nasc = nasc
+        self.cidade = cidade
+        self.estado = estado
+
+    def criar_Email(self): #Criação de Email
+        self.email = input("Digite seu email: ")
+
+    def criar_Senha(self): #Criação de Senha
+        while True:
+            senha = input("Crie sua senha (mín. 6 caracteres): ")
+            if len(senha) >= 6:
+                self.senha = senha
+                break
+            print("Senha muito curta!")                    
+
+    def inserir_Telefone(self): #Inserção de Telefone
+        self.telefone = input("Digite seu telefone: ")
+
+    def inserir_Cidade(self): #Inserção de Cidade
+        self.cidade = input("Digite sua cidade: ")
+
+    def inserir_Estado(self): #Inserção de Estado
+        self.estado = input("Digite seu estado: ")
+
+            
+            
+
+class ADM(Usuario):
+
+    def __init__(self, nome, email, senha, telefone, nasc, cidade, estado):
+        super().__init__(nome, email, senha, telefone, nasc, cidade, estado)
+
+    def criar_Email(self): #Criação de Email(ADM)
+        return super().criar_Email()
+    
+    def criar_Senha(self): #Criação de Senha(ADM)
+        return super().criar_Senha()
+    
+
+class Receptor(Usuario):
+
+    def __init__(self, nome, email, senha, telefone, nasc, cidade, estado, materiaisrecebidos):
+        super().__init__(nome, email, senha, telefone, nasc, cidade, estado)
+        self.materiaisrecebidos = materiaisrecebidos
+
+    def inserir_Nota(self): #Inserção de Notas
+        pass
+
+    def inserir_Descricao(self): #Inserção de Descrição
+        pass
+
+
+class Doador(Usuario):
+
+    def __init__(self, nome, email, senha, telefone, nasc, cidade, estado, materiaisdoados):
+        super().__init__(nome, email, senha, telefone, nasc, cidade, estado)
+        self.materiaisdoados = materiaisdoados
+
+    def getNota(self): #Busca pela Nota dada pelo Avaliador
+        print("Buscando nota do doador...")
+        return 
+
+    def getDescricaoAv(self): #Busca pela Descrição do Avaliador
+        print("Buscando descrição de avaliação...")
+        return
+
+    def getCod(self): # Busca pelo Codigo da Doação
+        doacao_id = input("Digite o ID da doação: ")
+        return
+
+
+class Material:
+
+        def __init__(self, titulo, categoria, descricao, conservacao, localizacao):
+            self.titulo = titulo
+            self.categoria = categoria
+            self.descricao = descricao
+            self.conservacao = conservacao
+            self.localizacao = localizacao
+
+        def definir_Titulo(self):
+            self.titulo = input("Digite o Titulo do Material: ")
+
+        def definir_Cat(self):
+            pass
+        
+        def definir_Desc(self):
+            self.descricao = input("Descreva o material: ")
+
+        def definir_Cons(self):
+            pass
+
+        def definir_Loc(self):
+            pass
+
+
+#class Doaçao(Material):
+
+#    def __init__(self, titulo, categoria, descricao, conservacao, localizacao, nota, desc_av, codigo_doacao):
+#        super().__init__(titulo, categoria, descricao, conservacao, localizacao)
+#        self.nota = nota
+#        self.desc_av = desc_av
+ #       self.codigo_doacao = codigo_doacao
+
+class Doacao:
+    """
+    Representa a transação de doação.
+    Ela associa um Doador, um Receptor e os Materiais envolvidos.
+    """
+    def __init__(self, codigo_doacao: str, doador, receptor, materiais):
+        
+        # Atributos específicos da transação
+        self.codigo_doacao = codigo_doacao 
+        self.nota = None           # Nota [int]
+        self.desc_av = None        # Descrição/Avaliação [string(500)]
+        self.categoria_doacao = None # Categoria da Doação [string]
+
+        # Relacionamentos com outras classes
+        self.doador = doador
+        self.receptor = receptor 
+        self.materiais = materiais # Lista de Materiais doados
+
+    def definir_nota(self, nota: int):
+        """Define a nota da transação (método do diagrama)."""
+        self.nota = nota
+        
+    def desc_ou_just(self, descricao: str):
+        """Define a descrição ou justificativa da doação (método do diagrama)."""
+        self.desc_av = descricao
+        
+    def cat_doacao(self, categoria: str):
+        """Define a categoria da doação (método do diagrama)."""
+        self.categoria_doacao = categoria
+        
+    def adicionar_material(self, material: 'Material'):
+        """Método auxiliar para adicionar um material à lista."""
+        self.materiais.append(material)
