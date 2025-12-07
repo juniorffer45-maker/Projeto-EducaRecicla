@@ -44,13 +44,14 @@ class Material:
             self.titulo = input("Digite o Titulo do Material: ")
 
         def definir_Cat(self):
-            pass
+            self.categoria = input("Digite a Categoria do Material: ")
         
         def definir_Desc(self):
             self.descricao = input("Descreva o material: ")
 
         def definir_Cons(self):
-            pass
+            self.conservacao = input("Descreva o Estado de Conservação: ")
 
         def definir_Loc(self):
-            pass        
+            self.localizacao = input("Descreva a Localização de Retirada: ")       
+
