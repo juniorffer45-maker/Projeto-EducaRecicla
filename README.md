@@ -9,7 +9,7 @@
 
 #Em um cenário econômico onde o material escolar compromete uma parte significativa da renda familiar, o EducaRecicla atua como um facilitador de acesso.
 
-#O Problema: Uma mãe precisa comprar livros literários ou uma mochila nova para o filho, mas o orçamento está apertado.
+#O Problema: Uma mãe precisa comprar um fardamento ou uma mochila nova para o filho, mas o orçamento está apertado.
 
 #A Solução: Através da plataforma, ela localiza um doador no seu bairro/cidade que possui exatamente o que ela precisa, em bom estado, eliminando a barreira financeira para o aprendizado da criança.
 
