@@ -13,7 +13,7 @@ O Problema: Uma mãe precisa comprar um fardamento ou uma mochila nova para o fi
 
 A Solução: Através da plataforma, ela localiza um doador no seu bairro/cidade que possui exatamente o que ela precisa, em bom estado, eliminando a barreira financeira para o aprendizado da criança.
 
-## ♻️ Para a Sustentabilidade (Economia Circular)
+## ♻️ Para a Sustentabilidade
 
 Muitos itens escolares são feitos de materiais duráveis (plásticos e tecidos resistentes) que poderiam servir a múltiplos estudantes, mas acabam esquecidos em gavetas.
 
