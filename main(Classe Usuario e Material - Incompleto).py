@@ -1,4 +1,5 @@
 class Usuario:
+#Representa o Usuario
 
     def __init__(self, nome, email, senha, telefone, nasc, cidade, estado):
         self.nome = nome
@@ -32,7 +33,8 @@ class Usuario:
 
 
 class Material:
-
+#Representa o item/material que esta sendo doado
+    
         def __init__(self, titulo, categoria, descricao, conservacao, localizacao):
             self.titulo = titulo
             self.categoria = categoria
@@ -54,4 +56,5 @@ class Material:
 
         def definir_Loc(self):
             self.localizacao = input("Descreva a Localização de Retirada: ")       
+
 
