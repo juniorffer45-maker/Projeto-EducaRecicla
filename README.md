@@ -6,6 +6,7 @@
 #O EducaRecicla não é apenas um sistema de cadastro; é uma solução tecnológica desenhada para resolver dores reais de famílias, escolas e do meio ambiente. Veja como este projeto se traduz em impacto prático:
 
 #🤝 Para as Famílias e Estudantes
+
 #Em um cenário econômico onde o material escolar compromete uma parte significativa da renda familiar, o EducaRecicla atua como um facilitador de acesso.
 
 #O Problema: Uma mãe precisa comprar livros literários ou uma mochila nova para o filho, mas o orçamento está apertado.
