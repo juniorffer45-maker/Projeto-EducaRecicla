@@ -1,7 +1,7 @@
 # Projeto-EducaRecicla
 #Possiveis usos da nossa solução
-'''
-🌍 Impacto no Mundo Real
+
+#🌍 Impacto no Mundo Real
 O EducaRecicla não é apenas uma aplicação de crud ou um sistema de cadastro; é uma solução tecnológica desenhada para resolver dores reais de famílias, escolas e do meio ambiente. Veja como este projeto se traduz em impacto prático:
 
 🤝 Para as Famílias e Estudantes
