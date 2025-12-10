@@ -1,5 +1,5 @@
 # Projeto-EducaRecicla
-#Possiveis usos da nossa solução
+#Possíveis usos da nossa solução
 
 #🌍 Impacto no Mundo Real
 
