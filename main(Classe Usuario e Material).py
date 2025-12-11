@@ -30,7 +30,21 @@ class Usuario:
     def inserir_Estado(self): #Inserção de Estado
         self.estado = input("Digite seu estado: ")
 
+class Admin(Usuario):
+    #Estou passando os parametros opcionais para ele não pedir os dados de cara. Porque se pedir e não tiver, dá erro.
+    def __init__(self, nome, email="", senha="", telefone, nasc):
+        super().__init__(nome, email, senha, telefone, nasc)
+        self.email = email
+        self.senha = senha
 
+    def definir_email(self, email): #Criação de Email(ADM)
+        self.email = email
+        return super().criar_Email()
+        
+    def definir_senha(self, senha): #Criação de Senha(ADM)
+        self.senha = senha
+        return super().criar_Senha()
+        
 
 class Material:
 #Representa o item/material que esta sendo doado
@@ -56,5 +70,6 @@ class Material:
 
         def definir_Loc(self):
             self.localizacao = input("Descreva a Localização de Retirada: ")       
+
 
 
