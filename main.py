@@ -44,7 +44,27 @@ class Admin(Usuario):
     def definir_senha(self, senha): #Criação de Senha(ADM)
         self.senha = senha
         return super().criar_Senha()
-        
+
+
+class Doador(Usuario):
+    def _init_(self, nome, email, senha, telefone, nasc, cidade, estado):
+        # Aqui o Doador "nasce" já chamando a construção do Usuario (super)
+        super()._init_(nome, email, senha, telefone, nasc, cidade, estado)
+        self.materiais_doados = 0       
+    
+    def getNota(self, nota): #Busca pela Nota dada pelo Avaliador
+        print("Buscando nota do doador...")
+        return nota
+
+    def getDescricaoAv(self, desc_av): #Busca pela Descrição do Avaliador
+        print("Buscando descrição de avaliação...")
+        return desc_av
+
+    def getCod(self, codigodoacao): # Busca pelo Codigo da Doação
+        doacao_id = input("Digite o ID da doação: ")
+        return codigodoacao
+
+
 
 class Material:
 #Representa o item/material que esta sendo doado
@@ -70,6 +90,7 @@ class Material:
 
         def definir_Loc(self):
             self.localizacao = input("Descreva a Localização de Retirada: ")       
+
 
 
 
