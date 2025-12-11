@@ -1,4 +1,4 @@
-class Usuario:
+class Usuario: #Criada por Aldemir Ferreira da Silva Junior
 #Representa o Usuario
 
     def __init__(self, nome, email, senha, telefone, nasc, cidade, estado):
@@ -30,7 +30,7 @@ class Usuario:
     def inserir_Estado(self): #Inserção de Estado
         self.estado = input("Digite seu estado: ")
 
-class Admin(Usuario):
+class Admin(Usuario): #Criada por Beatriz Benigno de Vasconcelos
     #Estou passando os parametros opcionais para ele não pedir os dados de cara. Porque se pedir e não tiver, dá erro.
     def __init__(self, nome, email="", senha="", telefone, nasc):
         super().__init__(nome, email, senha, telefone, nasc)
@@ -46,7 +46,7 @@ class Admin(Usuario):
         return super().criar_Senha()
 
 
-class Doador(Usuario):
+class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
     def _init_(self, nome, email, senha, telefone, nasc, cidade, estado):
         # Aqui o Doador "nasce" já chamando a construção do Usuario (super)
         super()._init_(nome, email, senha, telefone, nasc, cidade, estado)
@@ -66,7 +66,7 @@ class Doador(Usuario):
 
 
 
-class Material:
+class Material: #Criada por Aldemir Ferreira da Silva Junior
 #Representa o item/material que esta sendo doado
     
         def __init__(self, titulo, categoria, descricao, conservacao, localizacao):
@@ -90,6 +90,7 @@ class Material:
 
         def definir_Loc(self):
             self.localizacao = input("Descreva a Localização de Retirada: ")       
+
 
 
 
