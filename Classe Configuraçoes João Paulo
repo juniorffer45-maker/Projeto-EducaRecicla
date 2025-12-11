@@ -1,0 +1,8 @@
+ Def- alerta alto gasto=self-alerta alto gasto 
+ float 
+self- meses comparativo=meses comparativo
+self-meta econômica percentual=meta econômica percentual
+  float
+Def -init (self,filename=settings.json)
+self -validar parâmetros(self)
+  as configuraçoes dos diagramas vão executa os códigos da tabela para o final saber o resultado positivo dos codigos
