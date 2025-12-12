@@ -67,11 +67,16 @@ class Receptor(Usuario):
             except ValueError:
                 print("Entrada inválida. Por favor, digite um número.")
 
-    def inserir_Descricao(self): # Implementação básica
-        descricao = input("Insira uma descrição da experiência: ")
-        # Em um sistema real, você também passaria o objeto Doacao aqui.
-        print(f"Descrição registrada: {descricao}")
-
+    def inserir_Descricao(self, doacao_a_avaliar: 'Doacao'): 
+        """Permite ao receptor inserir uma descrição de avaliação para uma doação específica."""
+        if doacao_a_avaliar.receptor != self:
+             print("Erro: Esta doação não é sua para avaliar.")
+             return
+             
+        descricao = input(f"Insira a descrição de avaliação para {doacao_a_avaliar.codigo_doacao}: ")
+        
+        # Chama o método da Doacao para registrar a descrição
+        doacao_a_avaliar.desc_ou_just(descricao)
 
 class Doador(Usuario):
 
@@ -91,9 +96,17 @@ class Doador(Usuario):
         else:
             return "Nota ainda não registrada pelo receptor."
 
-    def getDescricaoAv(self): #Busca pela Descrição do Avaliador
-        print("Buscando descrição de avaliação...")
-        return
+    def getDescricaoAv(self, doacao_referencia: 'Doacao'):
+        """Busca a Descrição de Avaliação dada pelo Receptor para a transação."""
+        print(f"Buscando descrição de avaliação da Doação {doacao_referencia.codigo_doacao}...")
+        
+        if doacao_referencia.doador != self:
+            return "Erro: O doador desta transação não é este usuário."
+
+        if doacao_referencia.desc_av is not None:
+            return doacao_referencia.desc_av # Retorna a descrição salva
+        else:
+            return "Descrição de avaliação ainda não registrada pelo receptor."
 
     def getCod(self): # Busca pelo Codigo da Doação
         doacao_id = input("Digite o ID da doação: ")
@@ -162,8 +175,14 @@ class Doacao:
             return False
         
     def desc_ou_just(self, descricao: str):
-        #"""Define a descrição ou justificativa da doação (método do diagrama)."""
-        self.desc_av = descricao
+        """Define a descrição ou justificativa da doação, dada pelo receptor."""
+        if len(descricao) > 0:
+            self.desc_av = descricao
+            print(f"Descrição de avaliação registrada na doação {self.codigo_doacao}.")
+            return True
+        else:
+            print("Erro: A descrição não pode ser vazia.")
+            return False
         
     def cat_doacao(self, categoria: str):
         #"""Define a categoria da doação (método do diagrama)."""
@@ -172,4 +191,5 @@ class Doacao:
     def adicionar_material(self, material: 'Material'):
         #"""Método auxiliar para adicionar um material à lista."""
         self.materiais.append(material)
+
 
