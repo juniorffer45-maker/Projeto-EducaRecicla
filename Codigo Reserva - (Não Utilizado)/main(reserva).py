@@ -50,11 +50,27 @@ class Receptor(Usuario):
         super().__init__(nome, email, senha, telefone, nasc, cidade, estado)
         self.materiaisrecebidos = materiaisrecebidos
 
-    def inserir_Nota(self): #Inserção de Notas
-        pass
+    def inserir_Nota(self, doacao_a_avaliar: 'Doacao'):
+        """Permite ao receptor dar uma nota para uma doação específica."""
+        if doacao_a_avaliar.receptor != self:
+             print("Erro: Esta doação não é sua para avaliar.")
+             return
 
-    def inserir_Descricao(self): #Inserção de Descrição
-        pass
+        while True:
+            try:
+                # 1. Obter a nota do usuário
+                nota = int(input(f"Avalie a doação {doacao_a_avaliar.codigo_doacao} (1 a 5): "))
+                
+                # 2. Chamar o método da Doacao para registrar a nota
+                if doacao_a_avaliar.definir_nota(nota):
+                    break # Sai do loop se a nota for válida
+            except ValueError:
+                print("Entrada inválida. Por favor, digite um número.")
+
+    def inserir_Descricao(self): # Implementação básica
+        descricao = input("Insira uma descrição da experiência: ")
+        # Em um sistema real, você também passaria o objeto Doacao aqui.
+        print(f"Descrição registrada: {descricao}")
 
 
 class Doador(Usuario):
@@ -63,9 +79,17 @@ class Doador(Usuario):
         super().__init__(nome, email, senha, telefone, nasc, cidade, estado)
         self.materiaisdoados = materiaisdoados
 
-    def getNota(self): #Busca pela Nota dada pelo Avaliador
-        print("Buscando nota do doador...")
-        return 
+    def getNota(self, doacao_referencia: 'Doacao'): 
+        #"""Busca a nota dada pelo Receptor naquela transação específica."""
+        print(f"Buscando nota da Doação {doacao_referencia.codigo_doacao}...")
+        
+        if doacao_referencia.doador != self:
+            return "Erro: O doador desta transação não é este usuário."
+
+        if doacao_referencia.nota is not None:
+            return doacao_referencia.nota # Retorna a nota salva
+        else:
+            return "Nota ainda não registrada pelo receptor."
 
     def getDescricaoAv(self): #Busca pela Descrição do Avaliador
         print("Buscando descrição de avaliação...")
@@ -110,10 +134,10 @@ class Material:
  #       self.codigo_doacao = codigo_doacao
 
 class Doacao:
-    """
-    Representa a transação de doação.
-    Ela associa um Doador, um Receptor e os Materiais envolvidos.
-    """
+    
+    #Representa a transação de doação.
+    #Ela associa um Doador, um Receptor e os Materiais envolvidos.
+    
     def __init__(self, codigo_doacao: str, doador, receptor, materiais):
         
         # Atributos específicos da transação
@@ -128,17 +152,24 @@ class Doacao:
         self.materiais = materiais # Lista de Materiais doados
 
     def definir_nota(self, nota: int):
-        """Define a nota da transação (método do diagrama)."""
-        self.nota = nota
+        #"""Define a nota da transação, dada pelo receptor."""
+        if 1 <= nota <= 5: # Adiciona validação
+            self.nota = nota
+            print(f"Nota {nota} registrada na doação {self.codigo_doacao}.")
+            return True
+        else:
+            print("Erro: A nota deve ser entre 1 e 5.")
+            return False
         
     def desc_ou_just(self, descricao: str):
-        """Define a descrição ou justificativa da doação (método do diagrama)."""
+        #"""Define a descrição ou justificativa da doação (método do diagrama)."""
         self.desc_av = descricao
         
     def cat_doacao(self, categoria: str):
-        """Define a categoria da doação (método do diagrama)."""
+        #"""Define a categoria da doação (método do diagrama)."""
         self.categoria_doacao = categoria
         
     def adicionar_material(self, material: 'Material'):
-        """Método auxiliar para adicionar um material à lista."""
+        #"""Método auxiliar para adicionar um material à lista."""
         self.materiais.append(material)
+
