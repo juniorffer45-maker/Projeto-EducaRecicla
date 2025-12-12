@@ -93,7 +93,7 @@ class Material: #Criada por Aldemir Ferreira da Silva Junior
 
 
 
-class Doação:
+class Doação: #Criada por João Paulo Lima David
     def __init__(self, codigo_doacao: str, doador, receptor, materiais):
 
         # Atributos específicos da transação
@@ -102,4 +102,24 @@ class Doação:
         self.desc_av = None        # Descrição/Avaliação [string(500)]
         self.categoria_doacao = None # Categoria da Doação [string]
 
+         # Relacionamentos com outras classes
+        self.doador = doador
+        self.receptor = receptor 
+        self.materiais = materiais # Lista de Materiais doados
+
+        def definir_nota(self, nota: int):
+            #Define a nota da transação (método do diagrama).
+            self.nota = nota
+        
+        def desc_ou_just(self, descricao: str):
+            #Define a descrição ou justificativa da doação (método do diagrama).
+            self.desc_av = descricao
+        
+        def cat_doacao(self, categoria: str):
+            #Define a categoria da doação (método do diagrama).
+            self.categoria_doacao = categoria
+        
+        def adicionar_material(self, material: 'Material'):
+            #Método auxiliar para adicionar um material à lista.
+            self.materiais.append(material)
 
