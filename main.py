@@ -19,6 +19,28 @@ class Usuario: #Criada por Aldemir Ferreira da Silva Junior
         self.admin = True
         print(f"Permissão de ADMIN concedida ao usuário: {self.nome}")
 
+    def inserir_Nome(self): #Inserção de Nome
+        while True:
+            novo_nome = input("Digite seu nome completo: ").strip()
+            if len(novo_nome) >= 3 and " " in novo_nome:
+                self.nome = novo_nome
+                print(f"Nome atualizado para: {self.nome}")
+                break
+            else:
+                print("ERRO: Por favor, digite seu nome completo (mínimo de 3 caracteres e sobrenome).")
+
+    def inserir_Nasc(self): #Inserção de Data de Nascimento
+        #Solicita e atualiza a data de nascimento, com validação de formato (DD/MM/AAAA)
+        while True:
+            data_nasc = input("Digite sua data de nascimento (DD/MM/AAAA): ").strip()
+            if len(data_nasc) == 10 and data_nasc[2] == '/' and data_nasc[5] == '/':
+                self.nasc = data_nasc
+                print(f"Data de nascimento atualizada para: {self.nasc}")
+                break
+            else:
+                print("ERRO: O formato da data está incorreto. Use o padrão DD/MM/AAAA (ex: 31/12/1990).")
+
+    
     def criar_Email(self): #Criação de Email
         self.email = input("Digite seu email: ")
 
@@ -67,36 +89,30 @@ class Receptor(Usuario): #Criada por Maria Ivanilda Irineu de Lima
 
 
 class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
-    def __init__(self, nome, email, senha, telefone, nasc, cidade, estado):
-        super().__init__(nome, email, senha, telefone, nasc, cidade, estado)
+    def _init_(self, nome, email, senha, telefone, nasc, cidade, estado):
+        # Aqui o Doador "nasce" já chamando a construção do Usuario (super)
+        super()._init_(nome, email, senha, telefone, nasc, cidade, estado)
         self.materiais_doados = 0       
-
-    def getNota(self, doacao_referencia): 
-        #Busca a nota dada pelo Receptor naquela transação específica.
+    
+    def getNota(self, nota): #Buscará as notas dadas pelo Usuario Receptor e irá calcular sua média, sendo esta a Nota Definitiva do Usuario Doador 
         print(f"Buscando nota da Doação {doacao_referencia.codigo_doacao}...")
-        
         if doacao_referencia.doador != self:
             return "Erro: O doador desta transação não é este usuário."
-
         if doacao_referencia.nota is not None:
             return doacao_referencia.nota # Retorna a nota salva
         else:
             return "Nota ainda não registrada pelo receptor."
 
-    def getDescricaoAv(self, doacao_referencia):
-        #Busca a Descrição de Avaliação dada pelo Receptor para a transação.
+    def getDescricaoAv(self, desc_av): #Buscará o Comentario da Avaliação dada pelo Usuario Receptor em relação a transação.      
         print(f"Buscando descrição de avaliação da Doação {doacao_referencia.codigo_doacao}...")
-        
         if doacao_referencia.doador != self:
             return "Erro: O doador desta transação não é este usuário."
-
         if doacao_referencia.desc_av is not None:
             return doacao_referencia.desc_av # Retorna a descrição salva
         else:
             return "Descrição de avaliação ainda não registrada pelo receptor."
 
-
-    def getCod(self, codigodoacao): # Busca pelo Codigo da Doação
+    def getCod(self, codigodoacao): # Buscará pelo Codigo de alguma doação e irá disponibilizar suas informações
         doacao_id = input("Digite o ID da doação: ")
         return codigodoacao
       
@@ -111,19 +127,19 @@ class Material: #Criada por Aldemir Ferreira da Silva Junior
             self.conservacao = conservacao
             self.localizacao = localizacao
 
-        def definir_Titulo(self):
+        def definir_Titulo(self): #Define o titulo do Material
             self.titulo = input("Digite o Titulo do Material: ")
 
-        def definir_Categ(self):
+        def definir_Categ(self): #Define a Categoria do Material
             self.categoria = input("Digite a Categoria do Material: ")
         
-        def definir_Desc(self):
+        def definir_Desc(self): #Inserção da Descrição do Material
             self.descricao = input("Descreva o material: ")
 
-        def definir_Cons(self):
+        def definir_Cons(self): #Inserção do Estado de Conservação do Material
             self.conservacao = input("Descreva o Estado de Conservação: ")
 
-        def definir_Loc(self):
+        def definir_Loc(self): #Definição do Local de Retirada do Material
             self.localizacao = input("Descreva a Localização de Retirada: ")       
 
 
@@ -141,21 +157,18 @@ class Doação: #Criada por João Paulo Lima David
         self.receptor = receptor 
         self.materiais = materiais # Lista de Materiais doados
 
-        def definir_nota(self, nota: int):
-            #Define a nota da transação (método do diagrama).
+        def definir_nota(self, nota: int): #Define a nota da transação 
             self.nota = nota
         
-        def desc_ou_just(self, descricao: str):
-            #Define a descrição ou justificativa da doação (método do diagrama).
+        def desc_ou_just(self, descricao: str): #Define a descrição da doação 
             self.desc_av = descricao
         
-        def cat_doacao(self, categoria: str):
-            #Define a categoria da doação (método do diagrama).
+        def cat_doacao(self, categoria: str): #Define a categoria da doação
             self.categoria_doacao = categoria
         
-        def adicionar_material(self, material: 'Material'):
-            #Método auxiliar para adicionar um material à lista.
+        def adicionar_material(self, material: 'Material'): #Método auxiliar para adicionar um material à lista.
             self.materiais.append(material)
+
 
 
 
