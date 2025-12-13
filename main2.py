@@ -1,7 +1,7 @@
 from typing import List, Optional, TYPE_CHECKING
 import math
 
-# --- SIMULAÇÃO DE BANCO DE DADOS ---
+#SIMULAÇÃO DE BANCO DE DADOS
 # Lista global para simular o armazenamento de todas as instâncias de Doacao.
 REPOSITORIO_DOACOES: List['Doacao'] = []
 
