@@ -109,7 +109,7 @@ class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
         super()._init_(nome, email, senha, telefone, nasc, cidade, estado)
         self.materiais_doados = 0       
     
-    def getNota(self, nota): #Buscará as notas dadas pelo Usuario Receptor e irá calcular sua média, sendo esta a Nota Definitiva do Usuario Doador 
+    def getNota(self, doacao_referencia): #Buscará as notas dadas pelo Usuario Receptor e irá calcular sua média, sendo esta a Nota Definitiva do Usuario Doador 
         print(f"Buscando nota da Doação {doacao_referencia.codigo_doacao}...")
         if doacao_referencia.doador != self:
             return "Erro: O doador desta transação não é este usuário."
@@ -118,7 +118,7 @@ class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
         else:
             return "Nota ainda não registrada pelo receptor."
 
-    def getDescricaoAv(self, desc_av): #Buscará o Comentario da Avaliação dada pelo Usuario Receptor em relação a transação.      
+    def getDescricaoAv(self, doacao_referencia): #Buscará o Comentario da Avaliação dada pelo Usuario Receptor em relação a transação.      
         print(f"Buscando descrição de avaliação da Doação {doacao_referencia.codigo_doacao}...")
         if doacao_referencia.doador != self:
             return "Erro: O doador desta transação não é este usuário."
@@ -183,6 +183,7 @@ class Doação: #Criada por João Paulo Lima David
         
         def adicionar_material(self, material: 'Material'): #Método auxiliar para adicionar um material à lista.
             self.materiais.append(material)
+
 
 
 
