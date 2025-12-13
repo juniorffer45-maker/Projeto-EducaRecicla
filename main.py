@@ -10,6 +10,15 @@ class Usuario: #Criada por Aldemir Ferreira da Silva Junior
         self.cidade = cidade
         self.estado = estado
 
+    #Criada por Beatriz Benigno de Vasconcelos
+    # NOVA PROPRIEDADE: Começa sempre como Falso (Usuário comum)
+        self.admin = False 
+
+    def definir_como_administrador(self):
+        #Transforma este usuário em um administrador.
+        self.admin = True
+        print(f"Permissão de ADMIN concedida ao usuário: {self.nome}")
+
     def criar_Email(self): #Criação de Email
         self.email = input("Digite seu email: ")
 
@@ -30,23 +39,11 @@ class Usuario: #Criada por Aldemir Ferreira da Silva Junior
     def inserir_Estado(self): #Inserção de Estado
         self.estado = input("Digite seu estado: ")
 
-class Admin(Usuario): #Criada por Beatriz Benigno de Vasconcelos 
-    #Parametros obrigatorios antes dos opcionais
-    def __init__(self, nome, telefone, nasc, email="", senha=""):
-        super().__init__(nome, email, senha, telefone, nasc)
-        self.email = email
-        self.senha = senha
-
-    def definir_email(self, email): #Criação de Email(ADM)
-        self.email = email
-        return super().criar_Email()
-        
-    def definir_senha(self, senha): #Criação de Senha(ADM)
-        self.senha = senha
-        return super().criar_Senha()
+# CLASSES FILHAS (HERANÇA)
 
 class Receptor(Usuario): #Criada por Maria Ivanilda Irineu de Lima 
-    def __init__(self, materiaisRecebidos: int):
+    def __init__(self, nome, email, senha, telefone, nasc, cidade, estado, materiaisRecebidos):
+        super().__init__(nome, email, senha, telefone, nasc, cidade, estado)
         self.materiaisRecebidos = materiaisRecebidos
         self.nota = None
         self.descricaoAvaliacao = None
@@ -71,11 +68,10 @@ class Receptor(Usuario): #Criada por Maria Ivanilda Irineu de Lima
 
 class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
     def __init__(self, nome, email, senha, telefone, nasc, cidade, estado):
-        # Aqui o Doador "nasce" já chamando a construção do Usuario (super)
-        super()._init_(nome, email, senha, telefone, nasc, cidade, estado)
+        super().__init__(nome, email, senha, telefone, nasc, cidade, estado)
         self.materiais_doados = 0       
 
-    def getNota(self, doacao_referencia: 'Doacao'): 
+    def getNota(self, doacao_referencia): 
         #Busca a nota dada pelo Receptor naquela transação específica.
         print(f"Buscando nota da Doação {doacao_referencia.codigo_doacao}...")
         
@@ -87,7 +83,7 @@ class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
         else:
             return "Nota ainda não registrada pelo receptor."
 
-    def getDescricaoAv(self, doacao_referencia: 'Doacao'):
+    def getDescricaoAv(self, doacao_referencia):
         #Busca a Descrição de Avaliação dada pelo Receptor para a transação.
         print(f"Buscando descrição de avaliação da Doação {doacao_referencia.codigo_doacao}...")
         
@@ -119,7 +115,7 @@ class Material: #Criada por Aldemir Ferreira da Silva Junior
         def definir_Titulo(self):
             self.titulo = input("Digite o Titulo do Material: ")
 
-        def definir_Cat(self):
+        def definir_Categ(self):
             self.categoria = input("Digite a Categoria do Material: ")
         
         def definir_Desc(self):
@@ -134,15 +130,15 @@ class Material: #Criada por Aldemir Ferreira da Silva Junior
 
 
 class Doação: #Criada por João Paulo Lima David
-    def __init__(self, codigo_doacao: str, doador, receptor, materiais):
+    def __init__(self, codigo_doacao, doador, receptor, materiais):
 
         # Atributos específicos da transação
         self.codigo_doacao = codigo_doacao 
         self.nota = None           # Nota [int]
         self.desc_av = None        # Descrição/Avaliação [string(500)]
-        self.categoria_doacao = None # Categoria da Doação [string]
+        self.categoria_doacao = None  # Categoria da Doação [string]
 
-         # Relacionamentos com outras classes
+        # Relacionamentos com outras classes
         self.doador = doador
         self.receptor = receptor 
         self.materiais = materiais # Lista de Materiais doados
@@ -162,8 +158,6 @@ class Doação: #Criada por João Paulo Lima David
         def adicionar_material(self, material: 'Material'):
             #Método auxiliar para adicionar um material à lista.
             self.materiais.append(material)
-
-
 
 
 
