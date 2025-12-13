@@ -53,7 +53,7 @@ class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
         self.materiais_doados = 0       
 
     def getNota(self, doacao_referencia: 'Doacao'): 
-        #"""Busca a nota dada pelo Receptor naquela transação específica."""
+        #Busca a nota dada pelo Receptor naquela transação específica.
         print(f"Buscando nota da Doação {doacao_referencia.codigo_doacao}...")
         
         if doacao_referencia.doador != self:
@@ -65,7 +65,7 @@ class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
             return "Nota ainda não registrada pelo receptor."
 
     def getDescricaoAv(self, doacao_referencia: 'Doacao'):
-        """Busca a Descrição de Avaliação dada pelo Receptor para a transação."""
+        #Busca a Descrição de Avaliação dada pelo Receptor para a transação.
         print(f"Buscando descrição de avaliação da Doação {doacao_referencia.codigo_doacao}...")
         
         if doacao_referencia.doador != self:
@@ -81,14 +81,7 @@ class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
         doacao_id = input("Digite o ID da doação: ")
         return codigodoacao
 
-    #def getNota(self, nota): #Busca pela Nota dada pelo Avaliador
-        #print("Buscando nota do doador...")
-        #return nota
-
-    #def getDescricaoAv(self, desc_av): #Busca pela Descrição do Avaliador
-        #print("Buscando descrição de avaliação...")
-        #return desc_av
-  
+      
 
 class Material: #Criada por Aldemir Ferreira da Silva Junior
 #Representa o item/material que esta sendo doado
@@ -146,5 +139,6 @@ class Doação: #Criada por João Paulo Lima David
         def adicionar_material(self, material: 'Material'):
             #Método auxiliar para adicionar um material à lista.
             self.materiais.append(material)
+
 
 
