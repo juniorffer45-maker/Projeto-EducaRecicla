@@ -95,17 +95,19 @@ class Usuario: # Criada por Aldemir Ferreira da Silva Junior
         self.estado = input("Digite seu estado: ")
 
 
-class Admin(Usuario): # Criada por Beatriz Benigno de Vasconcelos
-    #Classe que herda de Usuario, representando um administrador
-    
-    
-    def __init__(self, nome, email, senha, telefone, nasc, cidade, estado):
-        super().__init__(nome, email, senha, telefone, nasc, cidade, estado)
+class Admin(Usuario): #Criada por Beatriz Benigno de Vasconcelos 
+    #Parametros obrigatorios antes dos opcionais
+    def __init__(self, nome, telefone, nasc, email="", senha=""):
+        super().__init__(nome, email, senha, telefone, nasc)
+        self.email = email
+        self.senha = senha
 
-    def definir_email(self): # Criação de Email(Admin)
+    def definir_email(self, email): #Criação de Email(ADM)
+        self.email = email
         return super().criar_Email()
         
-    def definir_senha(self): # Criação de Senha(Admin)
+    def definir_senha(self, senha): #Criação de Senha(ADM)
+        self.senha = senha
         return super().criar_Senha()
 
 
