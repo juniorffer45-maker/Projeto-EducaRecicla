@@ -99,7 +99,6 @@ class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
     def getCod(self, codigodoacao): # Busca pelo Codigo da Doação
         doacao_id = input("Digite o ID da doação: ")
         return codigodoacao
-
       
 
 class Material: #Criada por Aldemir Ferreira da Silva Junior
@@ -128,15 +127,14 @@ class Material: #Criada por Aldemir Ferreira da Silva Junior
             self.localizacao = input("Descreva a Localização de Retirada: ")       
 
 
-
 class Doação: #Criada por João Paulo Lima David
     def __init__(self, codigo_doacao, doador, receptor, materiais):
 
         # Atributos específicos da transação
         self.codigo_doacao = codigo_doacao 
-        self.nota = None           # Nota [int]
-        self.desc_av = None        # Descrição/Avaliação [string(500)]
-        self.categoria_doacao = None  # Categoria da Doação [string]
+        self.nota = None          
+        self.desc_av = None       
+        self.categoria_doacao = None  
 
         # Relacionamentos com outras classes
         self.doador = doador
@@ -158,6 +156,7 @@ class Doação: #Criada por João Paulo Lima David
         def adicionar_material(self, material: 'Material'):
             #Método auxiliar para adicionar um material à lista.
             self.materiais.append(material)
+
 
 
 
