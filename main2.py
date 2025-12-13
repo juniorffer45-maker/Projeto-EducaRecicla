@@ -27,6 +27,15 @@ class Usuario: # Criada por Aldemir Ferreira da Silva Junior
         self.nasc = nasc
         self.cidade = cidade
         self.estado = estado
+    
+    #Criada por Beatriz Benigno de Vasconcelos
+    # NOVA PROPRIEDADE: Começa sempre como Falso (Usuário comum)
+        self.admin = False 
+
+    def definir_como_administrador(self):
+        #Transforma este usuário em um administrador.
+        self.admin = True
+        print(f"Permissão de ADMIN concedida ao usuário: {self.nome}")
 
     def inserir_Nome(self):
         #Solicita e atualiza o nome completo do usuário
@@ -93,22 +102,6 @@ class Usuario: # Criada por Aldemir Ferreira da Silva Junior
 
     def inserir_Estado(self): # Inserção de Estado
         self.estado = input("Digite seu estado: ")
-
-
-class Admin(Usuario): #Criada por Beatriz Benigno de Vasconcelos 
-    #Parametros obrigatorios antes dos opcionais
-    def __init__(self, nome, telefone, nasc, email="", senha=""):
-        super().__init__(nome, email, senha, telefone, nasc)
-        self.email = email
-        self.senha = senha
-
-    def definir_email(self, email): #Criação de Email(ADM)
-        self.email = email
-        return super().criar_Email()
-        
-    def definir_senha(self, senha): #Criação de Senha(ADM)
-        self.senha = senha
-        return super().criar_Senha()
 
 
 class Doador(Usuario): # Criada por Ana Karla Pontes de Souza 
