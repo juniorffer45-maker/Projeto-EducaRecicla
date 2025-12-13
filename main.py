@@ -89,8 +89,7 @@ class Receptor(Usuario): #Criada por Maria Ivanilda Irineu de Lima
 
 
 class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
-    def _init_(self, nome, email, senha, telefone, nasc, cidade, estado):
-        # Aqui o Doador "nasce" já chamando a construção do Usuario (super)
+    def __init__(self, nome, email, senha, telefone, nasc, cidade, estado):
         super()._init_(nome, email, senha, telefone, nasc, cidade, estado)
         self.materiais_doados = 0       
     
@@ -168,6 +167,7 @@ class Doação: #Criada por João Paulo Lima David
         
         def adicionar_material(self, material: 'Material'): #Método auxiliar para adicionar um material à lista.
             self.materiais.append(material)
+
 
 
 
