@@ -42,7 +42,23 @@ class Usuario: #Criada por Aldemir Ferreira da Silva Junior
 
     
     def criar_Email(self): #Criação de Email
-        self.email = input("Digite seu email: ")
+        while True:
+            email = input("Digite seu email: ").strip()
+            #Checa se o email contém '@' e '.'
+            if "@" not in email or "." not in email:
+                print("ERRO: O e-mail deve conter o símbolo '@' e o símbolo '.' (ponto).")
+                continue # Volta ao início do loop
+            #Checa se o '@' está antes do '.'
+            # Verificação de estrutura (ex: a@b.com é válido, a.b@com não é)
+            indice_arroba = email.find("@")
+            indice_ponto = email.rfind(".") 
+            #Verifica se o arroba está no meio e se o ponto vem depois
+            if indice_arroba > 0 and indice_ponto > indice_arroba and indice_ponto < len(email) - 1:
+                self.email = email
+                print(f"E-mail '{email}' registrado com sucesso.")
+                break
+            else:
+                print("ERRO: O formato do e-mail está incorreto (verifique a posição de '@' e '.').")
 
     def criar_Senha(self): #Criação de Senha
         while True:
@@ -167,6 +183,7 @@ class Doação: #Criada por João Paulo Lima David
         
         def adicionar_material(self, material: 'Material'): #Método auxiliar para adicionar um material à lista.
             self.materiais.append(material)
+
 
 
 
