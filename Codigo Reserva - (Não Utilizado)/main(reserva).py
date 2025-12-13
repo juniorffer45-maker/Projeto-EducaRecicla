@@ -193,3 +193,43 @@ class Doacao:
         self.materiais.append(material)
 
 
+
+
+
+
+
+
+class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
+    def __init__(self, nome, email, senha, telefone, nasc, cidade, estado):
+        super().__init__(nome, email, senha, telefone, nasc, cidade, estado)
+        self.materiais_doados = 0       
+
+    def getNota(self, doacao_referencia): 
+        #Busca a nota dada pelo Receptor naquela transação específica.
+        print(f"Buscando nota da Doação {doacao_referencia.codigo_doacao}...")
+        
+        if doacao_referencia.doador != self:
+            return "Erro: O doador desta transação não é este usuário."
+
+        if doacao_referencia.nota is not None:
+            return doacao_referencia.nota # Retorna a nota salva
+        else:
+            return "Nota ainda não registrada pelo receptor."
+
+    def getDescricaoAv(self, doacao_referencia):
+        #Busca a Descrição de Avaliação dada pelo Receptor para a transação.
+        print(f"Buscando descrição de avaliação da Doação {doacao_referencia.codigo_doacao}...")
+        
+        if doacao_referencia.doador != self:
+            return "Erro: O doador desta transação não é este usuário."
+
+        if doacao_referencia.desc_av is not None:
+            return doacao_referencia.desc_av # Retorna a descrição salva
+        else:
+            return "Descrição de avaliação ainda não registrada pelo receptor."
+
+
+    def getCod(self, codigodoacao): # Busca pelo Codigo de alguma doação
+        doacao_id = input("Digite o ID da doação: ")
+        return codigodoacao
+
