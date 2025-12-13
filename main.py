@@ -30,7 +30,7 @@ class Usuario: #Criada por Aldemir Ferreira da Silva Junior
     def inserir_Estado(self): #Inserção de Estado
         self.estado = input("Digite seu estado: ")
 
-class Admin(Usuario): #Criada por Beatriz Benigno de Vasconcelos
+class Admin(Usuario): #Criada por Beatriz Benigno de Vasconcelos 
     #Estou passando os parametros opcionais para ele não pedir os dados de cara. Porque se pedir e não tiver, dá erro.
     def __init__(self, nome, email="", senha="", telefone, nasc):
         super().__init__(nome, email, senha, telefone, nasc)
@@ -44,6 +44,29 @@ class Admin(Usuario): #Criada por Beatriz Benigno de Vasconcelos
     def definir_senha(self, senha): #Criação de Senha(ADM)
         self.senha = senha
         return super().criar_Senha()
+
+class Receptor: #Criada por Maria Ivanilda Irineu de Lima 
+    def _init_(self, materiaisRecebidos: int):
+        self.materiaisRecebidos = materiaisRecebidos
+        self.nota = None
+        self.descricaoAvaliacao = None
+
+    def definirNota(self, nota):
+        """Define a nota dada ao receptor."""
+        self.nota = nota
+        print(f"Nota registrada: {nota}")
+
+    def definirDescricaoAval(self, descricao):
+        """Define a descrição da avaliação."""
+        self.descricaoAvaliacao = descricao
+        print(f"Descrição registrada: {descricao}")
+
+    def _str_(self):
+        return (
+            f"Receptor:\n"
+            f"Materiais Recebidos: {self.materiaisRecebidos}\n"
+            f"Nota: {self.nota}\n"
+            f"Descrição: {self.descricaoAvaliacao}")
 
 
 class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
@@ -139,6 +162,7 @@ class Doação: #Criada por João Paulo Lima David
         def adicionar_material(self, material: 'Material'):
             #Método auxiliar para adicionar um material à lista.
             self.materiais.append(material)
+
 
 
 
