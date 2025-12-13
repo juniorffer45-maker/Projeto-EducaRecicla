@@ -1,13 +1,8 @@
-class Admin:
-    #Estou passando os parametros opcionais para ele não pedir os dados de cara. Porque se pedir e não tiver, dá erro.
-    def __init__(self, email="", senha=""):
-        self.email = email
-        self.senha = senha
+#Criada por Beatriz Benigno de Vasconcelos
+    # NOVA PROPRIEDADE: Começa sempre como Falso (Usuário comum)
+        self.admin = False 
 
-    def definir_email(self, email):
-        self.email = email
-
-    def definir_senha(self, senha):
-        self.senha = senha
-
-    
+    def definir_como_administrador(self):
+        #Transforma este usuário em um administrador.
+        self.admin = True
+        print(f"Permissão de ADMIN concedida ao usuário: {self.nome}")
