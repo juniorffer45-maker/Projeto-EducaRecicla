@@ -31,8 +31,8 @@ class Usuario: #Criada por Aldemir Ferreira da Silva Junior
         self.estado = input("Digite seu estado: ")
 
 class Admin(Usuario): #Criada por Beatriz Benigno de Vasconcelos 
-    #Estou passando os parametros opcionais para ele não pedir os dados de cara. Porque se pedir e não tiver, dá erro.
-    def __init__(self, nome, email="", senha="", telefone, nasc):
+    #Parametros obrigatorios antes dos opcionais
+    def __init__(self, nome, telefone, nasc, email="", senha=""):
         super().__init__(nome, email, senha, telefone, nasc)
         self.email = email
         self.senha = senha
@@ -45,23 +45,23 @@ class Admin(Usuario): #Criada por Beatriz Benigno de Vasconcelos
         self.senha = senha
         return super().criar_Senha()
 
-class Receptor: #Criada por Maria Ivanilda Irineu de Lima 
-    def _init_(self, materiaisRecebidos: int):
+class Receptor(Usuario): #Criada por Maria Ivanilda Irineu de Lima 
+    def __init__(self, materiaisRecebidos: int):
         self.materiaisRecebidos = materiaisRecebidos
         self.nota = None
         self.descricaoAvaliacao = None
 
     def definirNota(self, nota):
-        """Define a nota dada ao receptor."""
+        #Define a nota dada ao receptor.
         self.nota = nota
         print(f"Nota registrada: {nota}")
 
     def definirDescricaoAval(self, descricao):
-        """Define a descrição da avaliação."""
+        #Define a descrição da avaliação.
         self.descricaoAvaliacao = descricao
         print(f"Descrição registrada: {descricao}")
 
-    def _str_(self):
+    def __str__(self):
         return (
             f"Receptor:\n"
             f"Materiais Recebidos: {self.materiaisRecebidos}\n"
@@ -70,7 +70,7 @@ class Receptor: #Criada por Maria Ivanilda Irineu de Lima
 
 
 class Doador(Usuario): #Criada por Ana Karla Pontes de Souza
-    def _init_(self, nome, email, senha, telefone, nasc, cidade, estado):
+    def __init__(self, nome, email, senha, telefone, nasc, cidade, estado):
         # Aqui o Doador "nasce" já chamando a construção do Usuario (super)
         super()._init_(nome, email, senha, telefone, nasc, cidade, estado)
         self.materiais_doados = 0       
@@ -162,6 +162,7 @@ class Doação: #Criada por João Paulo Lima David
         def adicionar_material(self, material: 'Material'):
             #Método auxiliar para adicionar um material à lista.
             self.materiais.append(material)
+
 
 
 
