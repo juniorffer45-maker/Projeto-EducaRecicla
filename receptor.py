@@ -1,3 +1,4 @@
+#Criado por Maria Ivanilda Irineu de Lima
 class Receptor:
     def _init_(self, materiaisRecebidos: int):
         self.materiaisRecebidos = materiaisRecebidos
@@ -5,12 +6,12 @@ class Receptor:
         self.descricaoAvaliacao = None
 
     def definirNota(self, nota):
-        """Define a nota dada ao receptor."""
+        #Define a nota dada ao receptor.
         self.nota = nota
         print(f"Nota registrada: {nota}")
 
     def definirDescricaoAval(self, descricao):
-        """Define a descrição da avaliação."""
+        #Define a descrição da avaliação.
         self.descricaoAvaliacao = descricao
         print(f"Descrição registrada: {descricao}")
 
