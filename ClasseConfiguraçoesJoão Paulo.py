@@ -1,4 +1,4 @@
-
+#JOAO PAULO
     Representa a transação de doação.
     Ela associa um Doador, um Receptor e os Materiais envolvidos.
     """ Classe doação:
