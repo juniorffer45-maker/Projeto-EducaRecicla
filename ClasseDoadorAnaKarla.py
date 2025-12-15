@@ -8,7 +8,8 @@ class Doador(Usuario):
     def getNota(self, nota):
         return nota
 
-    def getDescricaoAv(self, desc_av):       
+    def getDescricaoAv(self, desc_av):
+        return desc_av
 
     def getCod(self, codigodoacao):
         return codigodoacao
