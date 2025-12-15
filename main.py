@@ -19,6 +19,8 @@ class Usuario: #Criada por Aldemir Ferreira da Silva Junior
         self.admin = True
         print(f"Permissão de ADMIN concedida ao usuário: {self.nome}")
 
+    ##Aldemir
+
     def inserir_Nome(self): #Inserção de Nome
         while True:
             novo_nome = input("Digite seu nome completo: ").strip()
@@ -183,6 +185,7 @@ class Doação: #Criada por João Paulo Lima David
         
         def adicionar_material(self, material: 'Material'): #Método auxiliar para adicionar um material à lista.
             self.materiais.append(material)
+
 
 
 
