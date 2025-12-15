@@ -1,3 +1,4 @@
+#Ana Karla
 class Doador(Usuario):
     def _init_(self, nome, email, senha, telefone, nasc, cidade, estado):
         # Aqui o Doador "nasce" já chamando a construção do Usuario (super)
