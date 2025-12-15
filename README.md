@@ -1,4 +1,13 @@
 # Projeto-EducaRecicla
+
+#Universidade Federal do Cariri - Análise e Desenvolvimento de Sistemas - 2º Semestre/25
+# Integrantes da Equipe
+-- Beatriz Benigno de Vasconcelos
+-- Aldemir Ferreira da Silva Junior
+-- Ana Karla Pontes de Souza
+-- João Paulo Lima David
+-- Maria Ivanilda Irineu de Lima
+
 ## Possíveis usos da nossa solução
 
 ## COMO ELE PODE AJUDAR NO MUNDO REAL?
