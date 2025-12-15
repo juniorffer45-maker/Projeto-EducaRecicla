@@ -2,7 +2,7 @@
 
 #Universidade Federal do Cariri - Análise e Desenvolvimento de Sistemas - 2º Semestre/25
 # Integrantes da Equipe
--- Beatriz Benigno de Vasconcelos
+##-- Beatriz Benigno de Vasconcelos
 -- Aldemir Ferreira da Silva Junior
 -- Ana Karla Pontes de Souza
 -- João Paulo Lima David
