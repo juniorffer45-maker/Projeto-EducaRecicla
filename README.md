@@ -33,8 +33,8 @@ A Solução: Ao estabelecer escolas e bibliotecas parceiras como pontos de troca
 ## Resumo: O EducaRecicla utiliza a tecnologia para transformar itens parados em oportunidades de educação, conectando quem quer ajudar a quem precisa aprender.
 
 ## Possíveis usos da nossa solução
-Criar usuário
-Fazer Doações
-Receber Materiais Escolares
-Receptor poder fazer avaliações sobre o Doador
+Criar usuário /
+Fazer Doações /
+Receber Materiais Escolares /
+Receptor poder fazer avaliações sobre o Doador 
 
