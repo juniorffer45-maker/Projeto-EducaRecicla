@@ -1,14 +1,6 @@
 # Projeto-EducaRecicla
 
 #Universidade Federal do Cariri - Análise e Desenvolvimento de Sistemas - 2º Semestre/25
-# Integrantes da Equipe
--- Beatriz Benigno de Vasconcelos
--- Aldemir Ferreira da Silva Junior
--- Ana Karla Pontes de Souza
--- João Paulo Lima David
--- Maria Ivanilda Irineu de Lima
-
-## Possíveis usos da nossa solução
 
 ## COMO ELE PODE AJUDAR NO MUNDO REAL?
 
@@ -39,3 +31,10 @@ O Problema: Doações informais em redes sociais podem ser desorganizadas e inse
 A Solução: Ao estabelecer escolas e bibliotecas parceiras como pontos de troca ("Safe Zones"), o projeto garante a segurança física dos envolvidos e traz as famílias para dentro do ambiente escolar e cultural.
 
 ## Resumo: O EducaRecicla utiliza a tecnologia para transformar itens parados em oportunidades de educação, conectando quem quer ajudar a quem precisa aprender.
+
+## Possíveis usos da nossa solução
+Criar usuário
+Fazer Doações
+Receber Materiais Escolares
+Receptor poder fazer avaliações sobre o Doador
+
