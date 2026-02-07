@@ -51,12 +51,13 @@ Para o desenvolvimento do EducaRecicla, foram selecionadas tecnologias que garan
 
 O projeto EducaRecicla foi desenvolvido pelos discentes do curso de Análise e Desenvolvimento de Sistemas (UFCA):
 
-* **Aldemir Ferreira da Silva Junior** — [@usuario1](https://github.com/juniorffer45-maker)
-* **Beatriz Benigno de Vasconcelos** — [@usuario2](https://github.com/beatrizbenigno-web)
-* **João Paulo Lima David** — [@usuario3](https://github.com/Jopa-en)
-* **Maria Ivanilda Irineu de Lima** — [@usuario4](https://github.com/ivanildalima)
+* **Aldemir Ferreira da Silva Junior** — [Github](https://github.com/juniorffer45-maker)
+* **Beatriz Benigno de Vasconcelos** — [Github](https://github.com/beatrizbenigno-web)
+* **João Paulo Lima David** — [Github](https://github.com/Jopa-en)
+* **Maria Ivanilda Irineu de Lima** — [Github](https://github.com/ivanildalima)
 
 ---
 <div align="center">
-<small>Projeto Acadêmico Sem Fins Lucrativos — 2025</small>
+<small>Projeto Acadêmico Sem Fins Lucrativos — 2025-2027</small>
+
 </div>
