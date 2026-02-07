@@ -11,7 +11,6 @@
 ## Sumário
 * [Sobre o Projeto](#sobre-o-projeto)
 * [Importância do Projeto Físico de Banco de Dados](#projeto-fisico-bancodedados)
-* [Dicionário de Dados](#dicionário-de-dados)
 * [Funcionalidades e Fluxo](#fluxo-de-operação-e-funcionalidades-da-plataforma)
 * [Tecnologias](#stack-tecnológica)
 
@@ -59,4 +58,5 @@ O projeto EducaRecicla foi desenvolvido pelos discentes do curso de Análise e D
 ---
 <div align="center">
 <small>Projeto Acadêmico Sem Fins Lucrativos — 2025</small>
+
 </div>
