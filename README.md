@@ -1,6 +1,6 @@
 # Projeto-EducaRecicla
 
-#vUniversidade Federal do Cariri - Análise e Desenvolvimento de Sistemas - 2º Semestre/25
+#### Universidade Federal do Cariri - Análise e Desenvolvimento de Sistemas - 2º Semestre/25
 
 
 ## Sobre o Projeto:
