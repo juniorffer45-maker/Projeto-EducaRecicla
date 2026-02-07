@@ -13,6 +13,7 @@
 * [Importância do Projeto Físico de Banco de Dados](#projeto-fisico-bancodedados)
 * [Funcionalidades e Fluxo](#fluxo-de-operação-e-funcionalidades-da-plataforma)
 * [Tecnologias](#stack-tecnológica)
+* [Equipe](#equipe-ads)
 
 ## Sobre o Projeto:
 O EducaRecicla nasceu para resolver dois grandes problemas: a dificuldade financeira de muitas famílias em comprar material escolar e o desperdício de itens que ainda podem ser usados. 
@@ -60,3 +61,4 @@ O projeto EducaRecicla foi desenvolvido pelos discentes do curso de Análise e D
 <small>Projeto Acadêmico Sem Fins Lucrativos — 2025</small>
 
 </div>
+
