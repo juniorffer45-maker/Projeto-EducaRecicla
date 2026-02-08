@@ -2,7 +2,7 @@
 
 # Projeto EducaRecicla
 **Universidade Federal do Cariri — Tecnólogo em Análise e Desenvolvimento de Sistemas**
-**2º Semestre/2025**
+**- 2º Semestre/2025**
 
 </div>
 
@@ -61,4 +61,5 @@ O projeto EducaRecicla foi desenvolvido pelos discentes do curso de Análise e D
 <small>Projeto Acadêmico Sem Fins Lucrativos — 2025-2027</small>
 
 </div>
+
 
