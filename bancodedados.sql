@@ -2,6 +2,7 @@ CREATE TABLE Localidade (
     id_localidade INTEGER GENERATED ALWAYS AS IDENTITY,
     nome_cidade VARCHAR(100) UNIQUE NOT NULL,
     sigla_cidade VARCHAR(100) UNIQUE NOT NULL,
+    uf VARCHAR(2) UNIQUE (nome_cidade, uf)
     CONSTRAINT pk_localidade PRIMARY KEY (id_localidade)
 );
 
