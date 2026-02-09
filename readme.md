@@ -8,13 +8,6 @@
 
 ---
 
-## Sumário
-* [Sobre o Projeto](#sobre-o-projeto)
-* [Importância do Projeto Físico de Banco de Dados](#projeto-fisico-bancodedados)
-* [Funcionalidades](#funcionalidades-da-plataforma)
-* [Tecnologias](#stack-tecnológica)
-* [Equipe de Desenvolvimento](#equipe-de-desenvolvimento)
-
 ## Sobre o Projeto:
 O EducaRecicla visa resolver dois grandes problemas: a dificuldade financeira de muitas famílias em comprar material escolar e o desperdício de itens que ainda podem ser usados. 
 Sabemos que o preço dos materiais muitas vezes impede que alunos de baixa renda continuem estudando. Para mudar isso, nossa plataforma funciona como uma rede de economia circular. Nós conectamos quem quer doar materiais a quem precisa deles na mesma região. Assim, itens em bom estado voltam para as salas de aula em vez de irem para o lixo.
@@ -61,6 +54,7 @@ O projeto EducaRecicla foi desenvolvido pelos discentes do curso de Análise e D
 <small>Projeto Acadêmico Sem Fins Lucrativos — 2025-2027</small>
 
 </div>
+
 
 
 
