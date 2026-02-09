@@ -185,6 +185,20 @@ CREATE TABLE moderacao (
     CONSTRAINT ck_mod_status CHECK (status_resolucao IN ('ABERTO', 'EM_ANALISE', 'RESOLVIDO', 'REJEITADO'))
 );
 
+CREATE TABLE avaliacao (
+    id_avaliacao INT GENERATED ALWAYS AS IDENTITY,
+    id_avaliador INT NOT NULL,
+    id_doacao INT NOT NULL,
+    nota INT NOT NULL CHECK (nota >= 1 AND nota <= 5), 
+    comentario TEXT,
+    data_avaliacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT pk_avaliacao PRIMARY KEY (id_avaliacao),
+    
+    CONSTRAINT fk_id_avaliador FOREIGN KEY (id_avaliador) REFERENCES usuario(id_usuario),
+    CONSTRAINT fk_id_doacao FOREIGN KEY (id_doacao) REFERENCES doacao(id_doacao)
+);
+
 -- --- ÍNDICES DE PERFORMANCE
 
 -- Acelera: "Ver materiais do usuário X"
@@ -205,5 +219,6 @@ CREATE INDEX idx_mensagem_participantes ON mensagem(id_remetente, id_destinatari
 
 -- Acelera: "Ver minhas notificações não lidas"
 CREATE INDEX idx_notificacao_usuario ON notificacao(id_usuario) WHERE lida = FALSE;
+
 
 
