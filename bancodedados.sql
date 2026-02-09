@@ -1,4 +1,3 @@
--- 1. Tabelas Base
 CREATE TABLE Localidade (
     id_localidade INTEGER GENERATED ALWAYS AS IDENTITY,
     nome_cidade VARCHAR(100) UNIQUE NOT NULL,
@@ -12,7 +11,6 @@ CREATE TABLE categoria (
     CONSTRAINT pk_categoria PRIMARY KEY (id_categoria)
 );
 
--- 2. Tabela de Usuário
 CREATE TABLE usuario (
     id_usuario INTEGER GENERATED ALWAYS AS IDENTITY,
     id_localidade INTEGER,
@@ -33,7 +31,6 @@ CREATE TABLE usuario (
         ON DELETE SET NULL
 );
 
--- 3. Tabelas de Itens e Anúncios
 CREATE TABLE material (
     id_material INTEGER GENERATED ALWAYS AS IDENTITY,
     categoria_id INTEGER NOT NULL,
@@ -76,7 +73,6 @@ CREATE TABLE anuncio (
     CONSTRAINT ck_status CHECK (status IN ('ATIVO', 'PAUSADO', 'FINALIZADO'))
 );
 
--- 4. Tabelas de Apoio e Interação
 CREATE TABLE foto_material (
     id_foto INTEGER GENERATED ALWAYS AS IDENTITY,
     id_material INTEGER NOT NULL,
